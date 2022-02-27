@@ -1,0 +1,26 @@
+{
+  "name": "booked_api",
+  "version": "1.0.0",
+  "description": "API BOOKED WEB/APP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorGlez97/Booked_api.git"
+  },
+  "keywords": [
+    "API",
+    "WITH",
+    "NODE.JS",
+    "EXPRESS",
+    "MONGODB"
+  ],
+  "author": "Victor Glez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictorGlez97/Booked_api/issues"
+  },
+  "homepage": "https://github.com/VictorGlez97/Booked_api#readme"
+}
