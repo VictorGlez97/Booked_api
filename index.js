@@ -1,5 +1,5 @@
 const express = require('express');
-const Router = express.Router();
+//const Router = express.Router();
 require('dotenv').config();
 const cors = require('cors');
 const { dbConnection } = require('./database/config');
@@ -13,25 +13,32 @@ dbConnection();
 // CORS
 app.use(cors());
 
+
+// LECTURA Y PARSEO DE BODY
+app.use( express.json() );
+
 //RUTAS
-Router.get('/auth', (req, res) => {
+// Router.get('/auth', (req, res) => {
+//     try {
+//         console.log('entrando');
+//         res.status(201).json({
+//             ok: true,
+//             message: 'RESPONDIENDO'
+//         });
+//     } catch (error) {
+//         console.log(error);
+//     }
+// });
+// app.use('/api', Router);
 
-    try {
-    
-        console.log('entrando');
+// ROLES ROUTE
+app.use('/api/role', require('./routes/roles'));
 
-        res.status(201).json({
-            ok: true,
-            message: 'RESPONDIENDO'
-        });
+// AUTH ROUTE
+app.use('/api/auth', require('./routes/auth'));
 
-    } catch (error) {
-        console.log(error);
-    }
-
-});
-
-app.use('/api', Router);
+// USERS ROUTE
+app.use('/api/user', require('./routes/users'));
 
 // ESCUCHA PETICIONES
 app.listen(process.env.PORT, () => {
