@@ -100,4 +100,19 @@ const LoginUser = async( req, res = response ) => {
 
 }
  
-module.exports = { CreateUser, LoginUser }
+const RevalidateToken = async ( req, res = response ) => {
+    
+    const { uid, name } = req;
+
+    // GENERAR JWT
+    const token = await generateSign( uid, name );
+    
+    res.json({
+        ok: true,
+        uid,
+        name,
+        token
+    })
+}
+
+module.exports = { CreateUser, LoginUser, RevalidateToken }

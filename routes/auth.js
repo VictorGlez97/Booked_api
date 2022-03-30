@@ -13,10 +13,11 @@ const router = Router();
 
 const {
     CreateUser,
-    LoginUser
+    LoginUser,
+    RevalidateToken
 } = require('../controllers/auth');
 
-const { validate } = require('../middlewares/validate');
+const { validate, validateSign } = require('../middlewares/validate');
 
 router.post(
     '/create', 
@@ -37,5 +38,7 @@ router.post(
         validate
     ],
     LoginUser);
+
+router.get('/renew', validateSign, RevalidateToken);
 
 module.exports = router;
