@@ -32,10 +32,12 @@ router.use( validateSign );
 
 router.get(
     '/',
+    validate,
     GetUsers);
 
 router.get(
     '/:id',
+    validate,
     GetUser);
 
 router.put(
@@ -51,6 +53,7 @@ router.put(
 
 router.delete(
     '/:id',
+    validate,
     DeleteUser);
 
 module.exports = router;

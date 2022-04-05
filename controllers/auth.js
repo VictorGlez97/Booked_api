@@ -13,7 +13,7 @@ const CreateUser = async( req, res = response ) => {
         const { alias, pass } = req.body;
         // console.log( req.body );
 
-        let user = await User.findOne({ alias })
+        let user = await User.findOne({ alias });
 
         if ( user ) {
             return res.status(400).json({

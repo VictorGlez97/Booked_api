@@ -37,18 +37,22 @@ router.post(
 
 router.get(
     '/',
+    validate,
     GetRoles);
 
 router.get(
     '/:id',
+    validate,
     GetRole);
 
 router.put(
     '/:id',
+    validate,
     UpdateRole);
 
 router.delete(
     '/:id',
+    validate,
     DeleteRole);
 
 module.exports = router;
